@@ -1,49 +1,29 @@
-// *******    Module package EXTERNAL
-/* let num = 0
-const moment = require('moment');
-setTimeout(() => {
-    setInterval(() => {
 
-   num ++;
-const time = moment().format();
-console.log(`hozirgi vaqt ${time}`);
- });
-},500);
- */
-// External modullarni tashqaridan install qilamiz " npm moment --save", 'npm i moment' shundoq install qivolamiz bizga kk modullarni https://www.npmjs.com/ shu stedan olamiz
+const Account = require("./account"); // require qilgan holatda hohlagan joyda iwlatishimiz mumkin faylimizda
+console.log("'                               '")
 
-/* const moment = require('moment')
-const time = moment().format()
-console.log(time)
-// out 2024-01-28T13:27:59+09:00
+Account.tellMeAboutClass();
+// static classlarni objectlarsiz chaqirsaham bolaveradi
+Account.tellMeTime();
+//oddiy classlarga object berib
+const myAccount = new Account(97512345,300,'Leo',);
+myAccount.tellMemyBallance();
+myAccount.giveMeDetails();
+myAccount.withdrawMoney(400);
+myAccount.makeDeposit(500);
+Account.tellMeTime()
 
-setInterval(() =>{
-    console.log(`hozirgi vaqt ${time}`)
-},5000)
- */
 
-// import inquirer from 'inquirer';
-/* const inquirer = require('inquirer'); // terminal bilan input kiritish javoblardi tanlar shunaqa narsalarni korsatadi
-   inquirer 
-    .prompt([
-        {type:input, name:'raqam', messege:'raqamni kiriting'}
-    ])
-    .then((answer)=> {
-        console.log('Siz yozgan raqam',answer.raqam)
-    })
-    .catch((err) => console.log(err))
- */
-const validator = require('validator'); // mail tekshiradion Module
+console.log("{")
+console.log("'                               '")
+console.log(" }")
 
-// const test = validator.isEmail('jdas@ma.dge')
-const test = validator.isInt('adf') // str ni qabul qiladi ichidegi int bolsa true str ichidegi str bolsa false
-console.log(test)
+const myAccount1 = new Account(154113897666,3050,'Ferbo','Euro');
 
-const {v4: uuid }= require('uuid');
-const random = uuid();
-console.log(`Your uuid is ${random}`);
+myAccount1.tellMemyBallance();
+myAccount1.giveMeDetails();
+myAccount1.withdrawMoney(200);
+myAccount1.makeDeposit(100);
+Account.tellMeTime()
 
-const chalk = require('chalk');
-const log = console.log;
-
-log(chalk.redBright(`my random uuid ${random}`) )
+// keyn shundoq chaqiradi
